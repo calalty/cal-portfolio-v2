@@ -4,8 +4,12 @@ import { Menu } from "lucide-react";
 import { TitleCard } from "@/components/ui/title-card";
 import { Introduction } from "@/components/ui/introduction";
 import { Logo } from "@/icons/logo";
+import { getPlaylist } from "@/lib/spotify";
 
-export default function Page() {
+export default async function Page() {
+  const { data } = await getPlaylist("4BSr2hkZVjR0dJ1KCwLkBx");
+
+  console.log({ data });
   return (
     <div className="min-h-screen bg-card">
       <header className="flex items-center justify-between p-4 max-w-6xl mx-auto">
