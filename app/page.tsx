@@ -7,6 +7,7 @@ import { Logo } from "@/icons/logo";
 
 import { SpotifyCard } from "@/components/ui/spotify-card";
 import { RedditCard } from "@/components/ui/reddit-card";
+import { MapCard } from "@/components/ui/map-card";
 
 export default async function Page() {
   return (
@@ -26,7 +27,7 @@ export default async function Page() {
       <main className="max-w-5xl mx-auto px-4 py-12 space-y-16">
         <Introduction />
 
-        <section className="flex flex-row gap-8">
+        <section className="grid grid-cols-3 gap-8">
           <TitleCard title="My Experience">
             <div className="">
               <div className="relative pl-4 border-l-2 border-gray-200 pb-4">
@@ -54,8 +55,8 @@ export default async function Page() {
           </TitleCard>
 
           <SpotifyCard />
-
           <RedditCard />
+          <MapCard />
         </section>
       </main>
     </div>
