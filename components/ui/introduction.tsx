@@ -32,7 +32,7 @@ export const Introduction = () => (
 
       <Badge
         variant="secondary"
-        className="bg-green-200 hover:bg-mute text-green-700 absolute right-20 bottom-1 text-md rounded-full flex gap-1 items-center"
+        className="bg-green-200 hover:bg-mute text-green-700 absolute right-40 bottom-1 text-md rounded-full flex gap-1 items-center"
       >
         <DoorOpen size={20} />
         Open to work

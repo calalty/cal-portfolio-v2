@@ -1,4 +1,5 @@
 import { httpClient } from "@/lib/http-client";
+import axios from "axios";
 import { NextResponse } from "next/server";
 
 type ExternalUrls = {
@@ -121,35 +122,70 @@ export type RefinedPlaylist = {
   images?: Image[];
 };
 
+let cachedToken: { value: string; expiresAt: number } | null = null;
+
+const getSpotifyAccessToken = async (): Promise<string> => {
+  if (cachedToken && cachedToken.expiresAt > Date.now()) {
+    return cachedToken.value;
+  }
+
+  const auth = btoa(`${process.env.SPOTIFY_ID}:${process.env.SPOTIFY_SECRET}`);
+  const body = new URLSearchParams({ grant_type: "client_credentials" });
+
+  try {
+    const response = await axios.post(
+      "https://accounts.spotify.com/api/token",
+      body,
+      {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          Authorization: `Basic ${auth}`,
+        },
+      }
+    );
+    cachedToken = {
+      value: response.data.access_token,
+      expiresAt: Date.now() + response.data.expires_in * 1000,
+    };
+    return cachedToken.value;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export async function GET(
   _request: Request,
   { params }: { params: { id: string } }
 ) {
   try {
-    const awaitedParams = await params;
-    const response = await httpClient.get<SpotifyPlaylist>(
-      `/playlists/${awaitedParams.id}`
+    const token = await getSpotifyAccessToken();
+    const playlistId = params.id;
+
+    const { data, isError } = await httpClient.get<SpotifyPlaylist>(
+      `/playlists/${playlistId}`,
+      {},
+      "https://api.spotify.com/v1",
+      `Bearer ${token}`
     );
 
-    if (response.isError) {
+    if (isError) {
       return NextResponse.json(
-        { error: "Failed to fetch playlist" },
-        { status: 500 }
+        { error: "Invalid playlist ID" },
+        { status: 404 }
       );
     }
 
     const playlist: RefinedPlaylist = {
-      id: response.data?.id ?? "",
-      name: response.data?.name,
-      images: response.data?.tracks.items.map(
-        (item) => item.track.album.images[0]
-      ),
+      id: data?.id ?? "",
+      name: data?.name,
+      images: data?.tracks.items.map((item) => item.track.album.images[0]),
     };
 
     return NextResponse.json({ playlist });
   } catch (error) {
+    const message = error instanceof Error ? error.message : "Unknown error";
     return NextResponse.json(
-      { error: `Internal server error. ${error}` },
+      { error: `Internal server error: ${message}` },
       { status: 500 }
     );
   }

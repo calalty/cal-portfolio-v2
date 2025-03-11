@@ -8,7 +8,7 @@ export type Props = {
 
 export const TitleCard = ({ title, children }: Props) => {
   return (
-    <Card className="max-h-72 min-w-80 relative overflow-hidden p-6">
+    <Card className="max-h-72 min-w-80 relative overflow-hidden p-6 flex flex-col">
       <h2 className="bg-white py-2 px-4 font-semibold mb-6 rounded-xl w-fit">
         {title}
       </h2>

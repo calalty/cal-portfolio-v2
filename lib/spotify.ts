@@ -7,9 +7,7 @@ export const getPlaylist = async (
   playlistId: string
 ): Promise<AxiosApiDataResponse<RefinedPlaylist>> => {
   const response = await httpClient.get<{ playlist: RefinedPlaylist }>(
-    spotify.getPlaylist(playlistId),
-    undefined,
-    "http://localhost:3000"
+    spotify.getPlaylist(playlistId)
   );
   return {
     ...response,
