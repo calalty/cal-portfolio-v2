@@ -1,12 +1,12 @@
 export const Logo = () => (
-    <svg
-        className="rounded-xl"
+  <svg
+    className="rounded-xl"
     xmlns="http://www.w3.org/2000/svg"
     width="40"
     height="40"
     viewBox="0 0 192.756 192.756"
   >
-    <g fill-rule="evenodd" clip-rule="evenodd">
+    <g fillRule="evenodd" clipRule="evenodd">
       <path fill="#f8f8f8" d="M0 0h192.756v192.756H0V0z" />
       <path
         fill="#007fff"

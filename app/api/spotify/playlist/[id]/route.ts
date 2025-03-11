@@ -116,6 +116,7 @@ type SpotifyPlaylist = {
 };
 
 export type RefinedPlaylist = {
+  id: string;
   name?: string;
   images?: Image[];
 };
@@ -138,8 +139,11 @@ export async function GET(
     }
 
     const playlist: RefinedPlaylist = {
+      id: response.data?.id ?? "",
       name: response.data?.name,
-      images: response.data?.tracks.items[0].track.album.images,
+      images: response.data?.tracks.items.map(
+        (item) => item.track.album.images[0]
+      ),
     };
 
     return NextResponse.json({ playlist });

@@ -5,6 +5,7 @@ import { TitleCard } from "@/components/ui/title-card";
 import { Introduction } from "@/components/ui/introduction";
 import { Logo } from "@/icons/logo";
 import { getPlaylist } from "@/lib/spotify";
+import { SpotifyCard } from "@/components/ui/spotify-card";
 
 export default async function Page() {
   const { data } = await getPlaylist("4BSr2hkZVjR0dJ1KCwLkBx");
@@ -27,7 +28,7 @@ export default async function Page() {
       <main className="max-w-3xl mx-auto px-4 py-12 space-y-16">
         <Introduction />
 
-        <section className="grid md:grid-cols-3 gap-8">
+        <section className="flex flex-row gap-8">
           <TitleCard title="My Experience">
             <div className="">
               <div className="relative pl-4 border-l-2 border-gray-200 pb-4">
@@ -53,6 +54,8 @@ export default async function Page() {
               </div>
             </div>
           </TitleCard>
+
+          <SpotifyCard />
         </section>
       </main>
     </div>
