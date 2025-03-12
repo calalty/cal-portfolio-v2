@@ -26,7 +26,7 @@ export const Introduction = () => (
           <span className="font-bold text-primary">Software Engineer</span>
         </span>
         <span className="block text-electric-blue mt-6 font-bold">
-          <span className="text-primary">@</span> On the Beach.
+          <span className="text-secondary">@</span> On the Beach.
         </span>
       </h1>
 
