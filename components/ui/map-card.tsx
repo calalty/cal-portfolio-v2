@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { TitleCard } from "./title-card";
 import { map } from "@/assets";
-import { MapPinIcon } from "lucide-react";
+import { LucideMapPinned, MapPinHouse, MapPinIcon } from "lucide-react";
 
 export const MapCard = async () => {
   return (
@@ -23,7 +23,7 @@ export const MapCard = async () => {
       </div>
 
       <div className="relative z-50 text-center h-full items-center flex flex-col gap-2 py-4 bg-gradient-to-t from-white via-white/50 to-white/0 justify-end">
-        <MapPinIcon className="stroke-white fill-red-600 h-8 w-8" />
+        <MapPinHouse className="stroke-white fill-red-600 h-8 w-8" />
         <span className="text-xl font-medium tracking-widest">MANCHESTER</span>
         <span className="text-base font-normal tracking-wide opacity-50">
           SALFORD
