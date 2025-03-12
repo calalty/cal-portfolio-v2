@@ -1,0 +1,14 @@
+[
+  {
+    "url": "http://localhost:3000/api/csv-parser/positions.csv",
+    "output": "types/linkedin.ts"
+  },
+  {
+    "url": "http://localhost:3000/api/reddit/Showerthoughts",
+    "output": "types/reddit.ts"
+  },
+  {
+    "url": "http://localhost:3000/api/spotify/playlist/4BSr2hkZVjR0dJ1KCwLkBx",
+    "output": "types/spotify.ts"
+  }
+]

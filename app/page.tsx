@@ -8,6 +8,7 @@ import { Logo } from "@/icons/logo";
 import { SpotifyCard } from "@/components/ui/spotify-card";
 import { RedditCard } from "@/components/ui/reddit-card";
 import { MapCard } from "@/components/ui/map-card";
+import { ExperienceCard } from "@/components/ui/experience-card";
 
 export default async function Page() {
   return (
@@ -28,32 +29,7 @@ export default async function Page() {
         <Introduction />
 
         <section className="grid grid-cols-3 gap-8">
-          <TitleCard title="My Experience">
-            <div className="">
-              <div className="relative pl-4 border-l-2 border-gray-200 pb-4">
-                <div className="absolute -left-[5px] top-2 w-2 h-2 rounded-full bg-black" />
-                <h3 className="font-medium">...</h3>
-                <p className="text-sm text-muted-foreground">
-                  2024 - On Job - Full time
-                </p>
-              </div>
-              <div className="relative pl-4 border-l-2 border-gray-200 pb-4">
-                <div className="absolute -left-[5px] top-2 w-2 h-2 rounded-full bg-black" />
-                <h3 className="font-medium">...</h3>
-                <p className="text-sm text-muted-foreground">
-                  2023 - Hybrid - Full time
-                </p>
-              </div>
-              <div className="relative pl-4 border-l-2 border-gray-200">
-                <div className="absolute -left-[5px] top-2 w-2 h-2 rounded-full bg-black" />
-                <h3 className="font-medium">...</h3>
-                <p className="text-sm text-muted-foreground">
-                  2022 - Remote - Full time
-                </p>
-              </div>
-            </div>
-          </TitleCard>
-
+          <ExperienceCard />
           <SpotifyCard />
           <RedditCard />
           <MapCard />

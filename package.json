@@ -6,13 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate:all-types": "node generate-api-types.js"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",
     "axios": "^1.8.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "csv-parse": "^5.6.0",
     "lucide-react": "^0.476.0",
     "next": "15.1.7",
     "react": "^19.0.0",
@@ -29,6 +31,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
     "postcss": "^8.5.3",
+    "quicktype": "^23.0.171",
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
   }

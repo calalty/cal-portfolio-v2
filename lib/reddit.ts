@@ -11,6 +11,6 @@ export const getSubreddit = async (
   );
   return {
     ...response,
-    data: response.data!.subreddit,
+    data: response.data,
   };
 };

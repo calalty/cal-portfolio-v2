@@ -11,6 +11,6 @@ export const getPlaylist = async (
   );
   return {
     ...response,
-    data: response.data!.playlist,
+    data: response.data,
   };
 };

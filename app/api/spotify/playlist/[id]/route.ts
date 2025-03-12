@@ -181,7 +181,7 @@ export async function GET(
       images: data?.tracks.items.map((item) => item.track.album.images[0]),
     };
 
-    return NextResponse.json({ playlist });
+    return NextResponse.json(playlist);
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown error";
     return NextResponse.json(

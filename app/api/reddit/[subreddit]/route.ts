@@ -63,7 +63,7 @@ export async function GET(
       })
     );
 
-    return NextResponse.json({ subreddit });
+    return NextResponse.json(subreddit);
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown error";
     return NextResponse.json(
