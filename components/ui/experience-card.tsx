@@ -12,7 +12,7 @@ export const ExperienceCard = async () => {
             key={title}
             className="relative pl-4 border-l-2 border-gray-200 pb-4"
           >
-            <div className="absolute -left-[5px] top-2 w-2 h-2 rounded-full bg-black" />
+            <div className="absolute -left-[5px] top-2 w-2 h-2 rounded-full bg-card" />
             <p className="font-medium">{companyName}</p>
             <p className="font-medium">{title}</p>
             <p className="text-sm text-muted-foreground">

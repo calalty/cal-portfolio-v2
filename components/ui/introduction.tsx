@@ -29,7 +29,7 @@ export const Introduction = async () => {
             C<span className="italic font-medium -ml-1 mr-1">{`(A)`}</span>LOUD{" "}
             <br />{" "}
           </span>
-          <span className="text-gradient"> CONNECT</span>
+          <span className="text-gradient">CONNECT</span>
         </h1>
         <span className="animate-textShadow">
           ⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
