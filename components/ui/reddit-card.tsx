@@ -18,12 +18,9 @@ export const RedditCard = async () => {
   } else if (!linkText) {
     backgroundColor = "#ff4500";
     textColor = "#f8f8f8";
-  } else if (linkTextColor === "dark") {
-    backgroundColor = "#f8f8f8";
-    textColor = "#0a0a0a";
-  } else if (linkTextColor === "light") {
-    backgroundColor = "#0a0a0a";
+  } else {
     textColor = "#f8f8f8";
+    backgroundColor = "#0a0a0a";
   }
 
   return (
