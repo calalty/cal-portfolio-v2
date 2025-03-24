@@ -116,11 +116,27 @@
   }
 }
 
+@layer utilities {
+  .text-gradient {
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(#222 50%, transparent 0);
+    -webkit-background-clip: text;
+    background-size: 2px 2px;
+    color: #222;
+    display: block;
+    position: relative;
+    text-shadow: 1px 1px 4px hsla(0, 0%, 100%, 0.1);
+    transition: color 0.3s;
+  }
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+button {
+  text-transform: uppercase;
   font-family: "League Spartan", sans-serif;
 }

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { TitleCard } from "./title-card";
-import { map } from "@/assets";
+import { map } from "@/public";
 import { MapPinHouse } from "lucide-react";
 
 export const MapCard = async () => {

@@ -9,6 +9,30 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes: {
+        textShadow: {
+          "0%": {
+            textShadow:
+              "rgba(0, 30, 255, 0.09) 0.46px 0px 0.17px, rgba(255, 0, 80, 0.055) -0.46px 0px 0.17px, rgba(244, 239, 237, 0.176) 0px 0px 0.52px",
+          },
+          "50%": {
+            textShadow:
+              "rgba(0, 30, 255, 0.353) 1.83px 0px 0.70px, rgba(255, 0, 80, 0.21) -1.83px 0px 0.70px, rgba(244, 239, 237, 0.7) 0px 0px 2.10px",
+          },
+          "100%": {
+            textShadow:
+              "rgba(0, 30, 255, 0.09) 0.46px 0px 0.17px, rgba(255, 0, 80, 0.055) -0.46px 0px 0.17px, rgba(244, 239, 237, 0.176) 0px 0px 0.52px",
+          },
+        },
+        starButton: {
+          "0%": { "background-position": "center 100%" },
+          "100%": { "background-position": "center 0" },
+        },
+      },
+      animation: {
+        starButton: "starButton 20s linear infinite",
+        textShadow: "textShadow 1.6s infinite alternate",
+      },
       colors: {
         "electric-blue": "hsl(var(--electric-blue))",
         background: "hsl(var(--background))",

@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 
 import { Introduction } from "@/components/ui/introduction";
-import { Logo } from "@/icons/logo";
 
 import { SpotifyCard } from "@/components/ui/spotify-card";
 import { RedditCard } from "@/components/ui/reddit-card";
@@ -15,9 +14,9 @@ export default async function Page() {
     <div className="min-h-screen bg-card">
       <header className="flex items-center justify-between p-4 max-w-6xl mx-auto">
         <div className="flex items-center gap-2">
-          <span className="text-3xl">༄</span>
+          <span className="text-3xl">☁︎</span>
           <span className="text-sm text-muted-foreground">
-            {'hey@caloudconnect.com'}
+            {"hey@caloudconnect.com"}
           </span>
         </div>
         <Button variant="ghost" size="icon">
